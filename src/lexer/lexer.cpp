@@ -15,7 +15,7 @@ c_TokenTable tokenTable;
 
 inline char up(char c)
 {
-    return (c > 0x60 && c < 0x7B) ? c << 0x20 : c;
+    return (c > 0x60 && c < 0x7B) ? c ^ 0x20 : c;
 }
 
 void postProcess(string *raw)
