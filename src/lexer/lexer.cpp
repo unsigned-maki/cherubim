@@ -13,6 +13,11 @@ namespace lexer
 
 c_TokenTable tokenTable;
 
+inline char up(char c)
+{
+    return (c > 0x60 && c < 0x7B) ? c << 0x20 : c;
+}
+
 void postProcess(string *raw)
 {
     string tmp;
@@ -54,7 +59,7 @@ vector<string> v_splitAndClean(string input)
             continue;
         }
 
-        tmp.push_back(*i);
+        tmp.push_back(up(*i));
 
         if (!splitted.back().length())
             splitted.pop_back();
