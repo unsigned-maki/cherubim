@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace lexer
+namespace cherubim::lexer
 {
 
 c_TokenTable::c_TokenTable()

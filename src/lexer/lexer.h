@@ -6,7 +6,7 @@
 #define POS_LEXER_H
 #include "token.h"
 
-namespace lexer
+namespace cherubim::lexer
 {
     vector<s_Token> v_lex(string input);
 }

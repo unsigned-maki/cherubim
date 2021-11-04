@@ -39,7 +39,7 @@ struct s_Token
     e_Token type;
 };
 
-namespace lexer
+namespace cherubim::lexer
 {
 
 class c_TokenTable : public map<string, e_Token>
