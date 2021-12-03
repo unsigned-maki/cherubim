@@ -8,7 +8,7 @@
 
 namespace cherubim::lexer
 {
-    vector<s_Token> v_lex(string input);
+    vector<SToken> lex(string input);
 }
 
 #endif //POS_LEXER_H

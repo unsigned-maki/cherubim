@@ -11,7 +11,7 @@ using namespace std;
 namespace cherubim::lexer
 {
 
-c_TokenTable tokenTable;
+CTokenTable g_tokenTable;
 
 inline char up(char c)
 {
@@ -21,16 +21,16 @@ inline char up(char c)
 void postProcess(string *raw)
 {
     string tmp;
-
+ 
     for (string::iterator i = raw->begin(); i < raw->end(); i++)
     {
-        if (tokenTable.st_getSyntacticTokens()->find(*i) != tokenTable.st_getSyntacticTokens()->end())
+        if (g_tokenTable.getSynTokens()->find(*i) != g_tokenTable.getSynTokens()->end())
         {
             tmp.push_back(' ');
             tmp.push_back(*i);
             tmp.push_back(' ');
         }
-        else if (tokenTable.st_getComplexTokens()->find(make_pair(*i, *(i+1))) != tokenTable.st_getComplexTokens()->end())
+        else if (g_tokenTable.getComplexTokens()->find(make_pair(*i, *(i+1))) != g_tokenTable.getComplexTokens()->end())
         {
             tmp.push_back(' ');
             tmp.push_back(*i);
@@ -68,30 +68,31 @@ vector<string> v_splitAndClean(string input)
     return splitted;
 }
 
-
-vector<s_Token> v_lex(string input)
+vector<SToken> lex(string input)
 {
-    vector<s_Token> tokens;
+    vector<SToken> tokens;
     vector<string> splitInput;
 
-    tokenTable = c_TokenTable();
+    g_tokenTable = CTokenTable();
 
     postProcess(&input);
     
+    cout << input << endl;
+
     splitInput = v_splitAndClean(input);
 
     for (vector<string>::iterator i = splitInput.begin(); i < splitInput.end(); i++)
     {
-        map<string, e_Token>::iterator lookup = tokenTable.find(*i);
+        map<string, EToken>::iterator lookup = g_tokenTable.find(*i);
 
-        if (lookup != tokenTable.end())
+        if (lookup != g_tokenTable.end())
         {
-            s_Token token = {lookup->first, lookup->second};
+            SToken token = {lookup->first, lookup->second};
             tokens.push_back(token);
         }
         else
         {
-            s_Token token = {*i, ID_IDENTIFIER};
+            SToken token = {*i, ID_IDENTIFIER};
             tokens.push_back(token);
         }
     }
