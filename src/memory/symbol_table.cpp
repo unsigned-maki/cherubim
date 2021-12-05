@@ -10,7 +10,7 @@ namespace cherubim::memory
 {
 
     /**
-     * @brief 
+     * @brief looks up a given symbol name and writes an gives a pointer to it.
      * 
      * @param symbol pointer to a pointer to a CSymbol class, which the pointer to the found symbol will be written to.  
      * @param name symbol name to look up.
