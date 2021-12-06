@@ -34,6 +34,15 @@ namespace cherubim::memory
         return SYM_NIL;
     }
 
+    /**
+     * @brief writes a given pointer to a CSymbol class instance to the symbol table using the given symbol name. 
+     * 
+     * @param symbol pointer to a CSymbol class instance, which will be written to the symbol table
+     * @param name symbol name to write to.
+     * @return true if the write operation was successful. 
+     * @return false if the write operation has failed.
+     */
+
     bool CSymbolTable::write(CSymbol *symbol, string name)
     {
         erase(name);
