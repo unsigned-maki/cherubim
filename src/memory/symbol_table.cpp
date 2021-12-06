@@ -12,7 +12,7 @@ namespace cherubim::memory
     /**
      * @brief looks up a given symbol name and writes an gives a pointer to it.
      * 
-     * @param symbol pointer to a pointer to a CSymbol class, which the pointer to the found symbol will be written to.  
+     * @param symbol pointer to a pointer to a CSymbol class instance, which the pointer to the found symbol will be written to.  
      * @param name symbol name to look up.
      * @return ESymbol type of the symbol that was read, returns SYM_NIL if it's an empty symbol or no symbol was found. 
      */
