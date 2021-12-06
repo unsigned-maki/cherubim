@@ -70,6 +70,7 @@ namespace cherubim::lexer
 
     vector<SToken> lex(string input)
     {
+        unsigned idCounter;
         vector<SToken> tokens;
         vector<string> splitInput;
 
@@ -79,20 +80,24 @@ namespace cherubim::lexer
         
         splitInput = splitAndClean(input);
 
+        idCounter = 0;
+
         for (vector<string>::iterator i = splitInput.begin(); i < splitInput.end(); i++)
         {
             map<string, EToken>::iterator lookup = g_tokenTable.find(*i);
 
             if (lookup != g_tokenTable.end())
             {
-                SToken token = {lookup->first, lookup->second};
+                SToken token = {lookup->first, lookup->second, idCounter};
                 tokens.push_back(token);
             }
             else
             {
-                SToken token = {*i, ID_IDENTIFIER};
+                SToken token = {*i, ID_IDENTIFIER, idCounter};
                 tokens.push_back(token);
             }
+
+            idCounter++;
         }
 
         return tokens;

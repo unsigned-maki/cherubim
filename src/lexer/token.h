@@ -39,6 +39,7 @@ namespace cherubim::lexer
     {
         string m_value;
         EToken m_type;
+        unsigned m_id;
     };
 
     class CTokenTable : public map<string, EToken>
