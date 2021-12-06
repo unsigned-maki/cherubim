@@ -34,4 +34,10 @@ namespace cherubim::memory
         return SYM_NIL;
     }
 
+    bool CSymbolTable::write(CSymbol *symbol, string name)
+    {
+        erase(name);
+        return emplace(name, symbol).second;
+    }
+
 }
