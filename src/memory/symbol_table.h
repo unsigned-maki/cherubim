@@ -17,7 +17,7 @@ namespace cherubim::memory
     {
         public:
             ESymbol read(CSymbol **symbol, string name);
-            void set();
+            bool write(CSymbol *symbol, string name);
     };
 
 }
