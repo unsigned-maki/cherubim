@@ -4,11 +4,12 @@
 
 #ifndef POS_LEXER_H
 #define POS_LEXER_H
+#include <iostream>
 #include "token.h"
 
 namespace cherubim::lexer
 {
-    vector<SToken> lex(string input);
+    extern vector<SToken> lex(string input);
 }
 
 #endif //POS_LEXER_H

@@ -2,10 +2,6 @@
 // Created by Niclas on 01.11.2021.
 //
 
-#include <utility>
-#include <map>
-#include <string>
-#include <vector>
 #include "token.h"
 
 using namespace std;

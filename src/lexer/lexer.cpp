@@ -2,9 +2,7 @@
 // Created by Niclas on 02.11.2021.
 //
 
-#include <iostream>
 #include "lexer.h"
-#include "token.h"
 
 using namespace std;
 
@@ -36,7 +34,7 @@ namespace cherubim::lexer
                 tmp.push_back(*i);
                 tmp.push_back(*(i+1));
                 tmp.push_back(' ');
-                *i++;
+                i++;
             }
             else
                 tmp.push_back(*i);
