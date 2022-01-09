@@ -4,10 +4,6 @@
 
 #ifndef POS1_SYMBOL_H
 #define POS1_SYMBOL_H
-#include <string>
-#include <iostream>
-
-using namespace std;
 
 enum ESymbol
 {
@@ -44,7 +40,6 @@ namespace cherubim::memory
 
     class CSymbolFunction : public CSymbol
     {
-        private:            
         public:
             CSymbolFunction();
     };
