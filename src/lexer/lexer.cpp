@@ -68,7 +68,7 @@ namespace cherubim::lexer
 
     vector<SToken> lex(string input)
     {
-        unsigned idCounter;
+        unsigned long idCounter;
         vector<SToken> tokens;
         vector<string> splitInput;
 
