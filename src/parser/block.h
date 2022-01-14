@@ -34,29 +34,41 @@ struct SBlock
         {
         case OP_DEFINE:
             this->m_type = BLOCK_DEFINE;
+            break;
         case OP_IF:
             this->m_type = BLOCK_IF;
+            break;
         case OP_IFF:
             this->m_type = BLOCK_IFF;
+            break;
         case OP_NOT:
             this->m_type = BLOCK_NOT;
+            break;
         case OP_AND:
             this->m_type = BLOCK_AND;
+            break;
         case OP_NAND:
             this->m_type = BLOCK_NAND;
+            break;
         case OP_OR:
             this->m_type = BLOCK_OR;
+            break;
         case OP_XOR:
             this->m_type = BLOCK_XOR;
+            break;
         case OP_NOR:
             this->m_type = BLOCK_NOR;
+            break;
         case OP_XNOR:
             this->m_type = BLOCK_XNOR;
+            break;
         case ID_IDENTIFIER:
             this->m_type = BLOCK_IDENTIFIER;
+            break;
         case LTRL_TRUE:
         case LTRL_FALSE:
             this->m_type = BLOCK_STATEMENT;
+            break;
         default:
             this->m_type = BLOCK_NOP;
             break;
