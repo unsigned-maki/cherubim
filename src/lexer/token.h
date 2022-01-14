@@ -14,7 +14,6 @@ using namespace std;
 
 enum EToken
 {
-    KWD_CALL,
     OP_DEFINE,
     OP_IF,
     OP_IFF,

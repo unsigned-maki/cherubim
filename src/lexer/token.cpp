@@ -50,11 +50,6 @@ namespace cherubim::lexer
         return insert(make_pair(string(1, first) + string(1, second), type)).second;
     }
 
-    bool CTokenTable::addCall(string call)
-    {
-        return insert(make_pair(call, KWD_CALL)).second;
-    }
-
     set< pair<char, char> > *CTokenTable::getComplexTokens()
     {
         return &m_complexTokens;
