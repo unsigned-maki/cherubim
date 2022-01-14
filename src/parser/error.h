@@ -24,6 +24,7 @@ struct SError {
     EError m_type;
     string m_message;
     unsigned long m_at;
+    bool m_hit;
 };
 
 #endif //POS1_ERROR_H
