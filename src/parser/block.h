@@ -21,8 +21,7 @@ enum EBlock
     BLOCK_NOR,
     BLOCK_XNOR,
     BLOCK_IDENTIFIER,    
-    BLOCK_TRUE,
-    BLOCK_FALSE
+    BLOCK_STATEMENT
 };
 
 struct SBlock
@@ -56,9 +55,8 @@ struct SBlock
         case ID_IDENTIFIER:
             this->m_type = BLOCK_IDENTIFIER;
         case LTRL_TRUE:
-            this->m_type = BLOCK_TRUE;
         case LTRL_FALSE:
-            this->m_type = BLOCK_FALSE;
+            this->m_type = BLOCK_STATEMENT;
         default:
             this->m_type = BLOCK_NOP;
             break;
