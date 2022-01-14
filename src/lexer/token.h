@@ -14,22 +14,22 @@ using namespace std;
 
 enum EToken
 {
-    OP_DEFINE,
-    OP_IF,
-    OP_IFF,
-    OP_NOT,
-    OP_AND,
-    OP_NAND,
-    OP_OR,
-    OP_XOR,
-    OP_NOR,
-    OP_XNOR,
-    ID_IDENTIFIER,
-    SYN_SEPERATOR,
-    SYN_BRACE_OPEN,
-    SYN_BRACE_CLOSE,
-    LTRL_TRUE,
-    LTRL_FALSE
+    OP_DEFINE = 0,
+    OP_IF = 1,
+    OP_IFF = 2,
+    OP_NOT = 3,
+    OP_AND = 4,
+    OP_NAND = 5,
+    OP_OR = 6,
+    OP_XOR = 7,
+    OP_NOR = 8,
+    OP_XNOR = 9,
+    ID_IDENTIFIER = 10,
+    SYN_SEPERATOR = 11,
+    SYN_BRACE_OPEN = 12,
+    SYN_BRACE_CLOSE = 13,
+    LTRL_TRUE = 14,
+    LTRL_FALSE = 15
 };
 
 namespace cherubim::lexer
