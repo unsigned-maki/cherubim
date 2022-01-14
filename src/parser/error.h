@@ -19,11 +19,11 @@ struct SError {
     {
         this->m_type = type;
         this->m_message = message;
-        this->at = at;
+        this->m_at = at;
     };
     EError m_type;
     string m_message;
-    unsigned long at;
+    unsigned long m_at;
 };
 
 #endif //POS1_ERROR_H
