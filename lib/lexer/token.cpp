@@ -21,33 +21,33 @@ namespace cherubim::lexer
         addSynToken('}', SYN_BRACE_CLOSE);
         addSynToken(';', SYN_SEPERATOR);
 
-        insert(make_pair("IF", OP_IF));
-        insert(make_pair("IFF", OP_IFF));
-        insert(make_pair("NOT", OP_NOT));
-        insert(make_pair("AND", OP_AND));
-        insert(make_pair("NAND", OP_NAND));
-        insert(make_pair("OR", OP_OR));
-        insert(make_pair("XOR", OP_XOR));
-        insert(make_pair("NOR", OP_NOR));
-        insert(make_pair("XNOR", OP_XNOR));
-        insert(make_pair("TRUE", LTRL_TRUE));
-        insert(make_pair("FALSE", LTRL_FALSE));
-        insert(make_pair("T", LTRL_TRUE));
-        insert(make_pair("F", LTRL_FALSE));
-        insert(make_pair("1", LTRL_TRUE));
-        insert(make_pair("0", LTRL_FALSE));
+        emplace("IF", OP_IF);
+        emplace("IFF", OP_IFF);
+        emplace("NOT", OP_NOT);
+        emplace("AND", OP_AND);
+        emplace("NAND", OP_NAND);
+        emplace("OR", OP_OR);
+        emplace("XOR", OP_XOR);
+        emplace("NOR", OP_NOR);
+        emplace("XNOR", OP_XNOR);
+        emplace("TRUE", LTRL_TRUE);
+        emplace("FALSE", LTRL_FALSE);
+        emplace("T", LTRL_TRUE);
+        emplace("F", LTRL_FALSE);
+        emplace("1", LTRL_TRUE);
+        emplace("0", LTRL_FALSE);
     }
 
     bool CTokenTable::addSynToken(char token, EToken type)
     {
         m_syntacticTokens.insert(token);
-        return insert(make_pair(string(1, token), type)).second;
+        return emplace(string(1, token), type).second;
     }
 
     bool CTokenTable::addComplexToken(char first, char second, EToken type)
     {
         m_complexTokens.insert(make_pair(first, second));
-        return insert(make_pair(string(1, first) + string(1, second), type)).second;
+        return emplace(string(1, first) + string(1, second), type).second;
     }
 
     set< pair<char, char> > *CTokenTable::getComplexTokens()

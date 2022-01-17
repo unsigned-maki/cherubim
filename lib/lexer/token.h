@@ -4,7 +4,6 @@
 
 #ifndef POS1_TOKEN_H
 #define POS1_TOKEN_H
-#include <utility>
 #include <map>
 #include <string>
 #include <vector>
