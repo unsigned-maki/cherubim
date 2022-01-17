@@ -2,7 +2,7 @@
 // Created by Niclas on 01.11.2021.
 //
 
-#include "symbol_table.h"
+#include "symbol_table.hpp"
 
 using namespace std;
 

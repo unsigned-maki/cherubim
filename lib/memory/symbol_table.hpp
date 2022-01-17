@@ -6,7 +6,7 @@
 #define POS1_SYMBOL_TABLE_H
 #include <map>
 #include <string>
-#include "symbol.h"
+#include "symbol.hpp"
 
 using namespace std;
 

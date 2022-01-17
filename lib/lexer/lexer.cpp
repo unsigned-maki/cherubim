@@ -2,7 +2,7 @@
 // Created by Niclas on 02.11.2021.
 //
 
-#include "lexer.h"
+#include "lexer.hpp"
 
 using namespace std;
 
@@ -102,6 +102,6 @@ namespace cherubim
 
             return tokens;
         }
-        
+
     }
 }

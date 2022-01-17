@@ -2,7 +2,7 @@
 // Created by Niclas on 01.11.2021.
 //
 
-#include "token.h"
+#include "token.hpp"
 
 using namespace std;
 

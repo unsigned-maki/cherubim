@@ -5,7 +5,7 @@
 #ifndef POS_LEXER_H
 #define POS_LEXER_H
 #include <iostream>
-#include "token.h"
+#include "token.hpp"
 
 namespace cherubim
 {

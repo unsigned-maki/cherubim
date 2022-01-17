@@ -2,7 +2,7 @@
 // Created by Niclas on 01.11.2021.
 //
 
-#include "symbol.h"
+#include "symbol.hpp"
 
 namespace cherubim
 {
@@ -18,6 +18,6 @@ namespace cherubim
         {
             m_literal = literal;
         }
-        
+
     }
 }
