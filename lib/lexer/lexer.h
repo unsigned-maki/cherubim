@@ -7,9 +7,12 @@
 #include <iostream>
 #include "token.h"
 
-namespace cherubim::lexer
+namespace cherubim
 {
-    extern vector<SToken> lex(string input);
+    namespace lexer
+    {
+        extern vector<SToken> lex(string input);
+    }
 }
 
 #endif //POS_LEXER_H

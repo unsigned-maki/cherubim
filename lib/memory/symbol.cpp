@@ -4,17 +4,20 @@
 
 #include "symbol.h"
 
-namespace cherubim::memory
+namespace cherubim
 {
-
-    bool CSymbolLiteral::get()
+    namespace memory
     {
-        return m_literal;
-    }
-    
-    void CSymbolLiteral::set(bool literal)
-    {
-        m_literal = literal;
-    }
 
+        bool CSymbolLiteral::get()
+        {
+            return m_literal;
+        }
+        
+        void CSymbolLiteral::set(bool literal)
+        {
+            m_literal = literal;
+        }
+        
+    }
 }

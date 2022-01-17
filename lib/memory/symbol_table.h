@@ -10,17 +10,18 @@
 
 using namespace std;
 
-namespace cherubim::memory
+namespace cherubim
 {
-
-    class CSymbolTable : public map<string, CSymbol *>
+    namespace memory
     {
-        public:
-            ESymbol read(CSymbol **symbol, string name);
-            
-            bool write(CSymbol *symbol, string name);
-    };
-
+        class CSymbolTable : public map<string, CSymbol *>
+        {
+            public:
+                ESymbol read(CSymbol **symbol, string name);
+                
+                bool write(CSymbol *symbol, string name);
+        };
+    }
 }
 
 #endif //POS1_SYMBOL_TABLE_H

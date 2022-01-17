@@ -12,38 +12,41 @@ enum ESymbol
     SYM_NIL
 };
 
-namespace cherubim::memory
+namespace cherubim
 {
-
-    class CSymbol
+    namespace memory
     {
-        public:            
-            ESymbol m_type = SYM_NIL;
 
-    };
+        class CSymbol
+        {
+            public:            
+                ESymbol m_type = SYM_NIL;
 
-    class CSymbolLiteral : public CSymbol
-    {
-        public:
-            CSymbolLiteral(bool literal)
-            {
-                this->m_literal = literal;
-                this->m_type = SYM_LITERAL;
-            };
-            
-            bool m_literal;
+        };
 
-            bool get();
+        class CSymbolLiteral : public CSymbol
+        {
+            public:
+                CSymbolLiteral(bool literal)
+                {
+                    this->m_literal = literal;
+                    this->m_type = SYM_LITERAL;
+                };
+                
+                bool m_literal;
 
-            void set(bool literal);
-    };
+                bool get();
 
-    class CSymbolFunction : public CSymbol
-    {
-        public:
-            CSymbolFunction();
-    };
+                void set(bool literal);
+        };
 
+        class CSymbolFunction : public CSymbol
+        {
+            public:
+                CSymbolFunction();
+        };
+
+    }
 }
 
 #endif //POS1_SYMBOL_H

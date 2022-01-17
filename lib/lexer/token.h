@@ -31,37 +31,40 @@ enum EToken
     LTRL_FALSE = 15
 };
 
-namespace cherubim::lexer
+namespace cherubim
 {
-
-    struct SToken
+    namespace lexer
     {
-        string m_value;
-        EToken m_type;
-        unsigned long m_id;
-    };
 
-    class CTokenTable : public map<string, EToken>
-    {
-        private:
-            set< pair<char, char> > m_complexTokens;
+        struct SToken
+        {
+            string m_value;
+            EToken m_type;
+            unsigned long m_id;
+        };
 
-            set<char> m_syntacticTokens;
+        class CTokenTable : public map<string, EToken>
+        {
+            private:
+                set< pair<char, char> > m_complexTokens;
 
-            bool addSynToken(char token, EToken type);
+                set<char> m_syntacticTokens;
 
-            bool addComplexToken(char first, char second, EToken type);
+                bool addSynToken(char token, EToken type);
 
-        public:        
-            CTokenTable();
+                bool addComplexToken(char first, char second, EToken type);
 
-            bool addCall(string call);
+            public:        
+                CTokenTable();
 
-            set< pair<char, char> > *getComplexTokens();
-            
-            set<char> *getSynTokens();
-    };
+                bool addCall(string call);
 
+                set< pair<char, char> > *getComplexTokens();
+                
+                set<char> *getSynTokens();
+        };
+
+    }
 }
 
 #endif //POS1_TOKEN_H

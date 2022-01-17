@@ -6,47 +6,50 @@
 
 using namespace std;
 
-namespace cherubim::memory
+namespace cherubim
 {
-
-    /**
-     * @brief looks up a given symbol name and writes an gives a pointer to it.
-     * 
-     * @param symbol pointer to a pointer to a CSymbol class instance, which the pointer to the found symbol will be written to.  
-     * @param name symbol name to look up.
-     * @return ESymbol type of the symbol that was read, returns SYM_NIL if it's an empty symbol or no symbol was found. 
-     */
-    
-    ESymbol CSymbolTable::read(CSymbol **symbol, string name)
+    namespace memory
     {
-        map<string, CSymbol *>::iterator lookup;
 
-        lookup = find(name);
-
-        if (lookup != end())
+        /**
+         * @brief looks up a given symbol name and writes an gives a pointer to it.
+         * 
+         * @param symbol pointer to a pointer to a CSymbol class instance, which the pointer to the found symbol will be written to.  
+         * @param name symbol name to look up.
+         * @return ESymbol type of the symbol that was read, returns SYM_NIL if it's an empty symbol or no symbol was found. 
+         */
+        
+        ESymbol CSymbolTable::read(CSymbol **symbol, string name)
         {
-            *symbol = lookup->second;
-            return lookup->second->m_type;
+            map<string, CSymbol *>::iterator lookup;
+
+            lookup = find(name);
+
+            if (lookup != end())
+            {
+                *symbol = lookup->second;
+                return lookup->second->m_type;
+            }
+
+            *symbol = nullptr;
+
+            return SYM_NIL;
         }
 
-        *symbol = nullptr;
+        /**
+         * @brief writes a given pointer to a CSymbol class instance to the symbol table using the given symbol name. 
+         * 
+         * @param symbol pointer to a CSymbol class instance, which will be written to the symbol table
+         * @param name symbol name to write to.
+         * @return true if the write operation was successful. 
+         * @return false if the write operation has failed.
+         */
 
-        return SYM_NIL;
+        bool CSymbolTable::write(CSymbol *symbol, string name)
+        {
+            erase(name);
+            return emplace(name, symbol).second;
+        }
+
     }
-
-    /**
-     * @brief writes a given pointer to a CSymbol class instance to the symbol table using the given symbol name. 
-     * 
-     * @param symbol pointer to a CSymbol class instance, which will be written to the symbol table
-     * @param name symbol name to write to.
-     * @return true if the write operation was successful. 
-     * @return false if the write operation has failed.
-     */
-
-    bool CSymbolTable::write(CSymbol *symbol, string name)
-    {
-        erase(name);
-        return emplace(name, symbol).second;
-    }
-
 }
