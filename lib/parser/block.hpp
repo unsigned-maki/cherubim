@@ -4,7 +4,7 @@
 
 #ifndef POS_BLOCK_H
 #define POS_BLOCK_H
-#include "../lexer/token.h"
+#include "../lexer/token.hpp"
 
 enum EBlock
 {
