@@ -28,7 +28,8 @@ enum EToken
     SYN_BRACE_OPEN = 12,
     SYN_BRACE_CLOSE = 13,
     LTRL_TRUE = 14,
-    LTRL_FALSE = 15
+    LTRL_FALSE = 15,
+    NIL = 16
 };
 
 namespace cherubim
