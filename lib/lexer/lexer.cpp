@@ -21,7 +21,8 @@ namespace cherubim
         void postProcess(string *raw)
         {
             string tmp;
-        
+            tmp.push_back(' ');
+
             for (string::iterator i = raw->begin(); i < raw->end(); i++)
             {
                 if (g_tokenTable.getSynTokens()->find(*i) != g_tokenTable.getSynTokens()->end())
@@ -30,7 +31,11 @@ namespace cherubim
                     tmp.push_back(*i);
                     tmp.push_back(' ');
                 }
-                else if (g_tokenTable.getComplexTokens()->find(make_pair(*i, *(i+1))) != g_tokenTable.getComplexTokens()->end())
+
+                if (i == raw->end() - 1)
+                    continue;
+
+                if (g_tokenTable.getComplexTokens()->find(make_pair(*i, *(i+1))) != g_tokenTable.getComplexTokens()->end())
                 {
                     tmp.push_back(' ');
                     tmp.push_back(*i);
@@ -41,6 +46,8 @@ namespace cherubim
                 else
                     tmp.push_back(*i);
             }
+            
+            tmp.push_back(' ');
 
             *raw = tmp;
         }
@@ -60,6 +67,9 @@ namespace cherubim
                 }
 
                 tmp.push_back(up(*i));
+
+                if (!splitted.size())
+                    continue;
 
                 if (!splitted.back().length())
                     splitted.pop_back();
